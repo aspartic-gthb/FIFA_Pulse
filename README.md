@@ -7,7 +7,7 @@ the API, and the analytics page — no separate hosting, no CORS, no login.
 - **Predictions** (`/`) — vote on the winner of each fixture. One click, no sign-up. Counts update live.
 - **Analytics** (`/analytics`) — real engagement + system-health metrics, pushed live over SSE.
 
-> Built to the spec in `PRD.md`, `TRD.md`, `Backend-Schema.md`, `UIUX-Brief.md`, `Website-Flow.md`.
+
 
 ## Stack
 
