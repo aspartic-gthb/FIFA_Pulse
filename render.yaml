@@ -1,0 +1,14 @@
+# Render Blueprint — one free web service.
+# Connect the repo in the Render dashboard; it reads this file automatically.
+services:
+  - type: web
+    name: fifa-pulse
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: node server.js
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20"

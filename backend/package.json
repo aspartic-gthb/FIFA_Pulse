@@ -1,0 +1,21 @@
+{
+  "name": "fifa-pulse",
+  "version": "1.0.0",
+  "description": "FIFA Pulse — anonymous match-prediction voting + live ops analytics for FIFA World Cup 2026. Single Express service, JSON-file datastore.",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "lint": "node --check server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2"
+  },
+  "license": "MIT"
+}

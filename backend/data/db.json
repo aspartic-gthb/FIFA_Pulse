@@ -1,0 +1,121 @@
+{
+  "matches": [
+    {
+      "id": "m1",
+      "stage": "Quarterfinal",
+      "teamA": "France",
+      "teamB": "Morocco",
+      "date": "2026-07-09T20:00:00Z",
+      "venue": "Foxborough (Gillette Stadium)",
+      "votes": {
+        "teamA": 4,
+        "teamB": 2
+      }
+    },
+    {
+      "id": "m2",
+      "stage": "Quarterfinal",
+      "teamA": "Spain",
+      "teamB": "Belgium",
+      "date": "2026-07-10T19:00:00Z",
+      "venue": "Inglewood (SoFi Stadium)",
+      "votes": {
+        "teamA": 2,
+        "teamB": 1
+      }
+    },
+    {
+      "id": "m3",
+      "stage": "Quarterfinal",
+      "teamA": "Norway",
+      "teamB": "England",
+      "date": "2026-07-11T21:00:00Z",
+      "venue": "Miami Gardens (Hard Rock Stadium)",
+      "votes": {
+        "teamA": 1,
+        "teamB": 2
+      }
+    },
+    {
+      "id": "m4",
+      "stage": "Semifinal",
+      "teamA": "TBD (QF1 Winner)",
+      "teamB": "TBD (QF2 Winner)",
+      "date": "2026-07-14T19:00:00Z",
+      "venue": "Arlington (AT&T Stadium)",
+      "votes": {
+        "teamA": 0,
+        "teamB": 0
+      }
+    },
+    {
+      "id": "m5",
+      "stage": "Final",
+      "teamA": "TBD (SF1 Winner)",
+      "teamB": "TBD (SF2 Winner)",
+      "date": "2026-07-19T19:00:00Z",
+      "venue": "East Rutherford (MetLife Stadium)",
+      "votes": {
+        "teamA": 0,
+        "teamB": 0
+      }
+    }
+  ],
+  "meta": {
+    "totalVisitors": 1578,
+    "requestCount": 1888,
+    "errorCount": 0,
+    "startedAt": "2026-07-09T15:57:50.854Z",
+    "lastUpdated": "2026-07-09T15:59:36.459Z"
+  },
+  "requestLog": [
+    {
+      "timestamp": "2026-07-09T15:58:44.623Z",
+      "route": "/",
+      "status": 200,
+      "responseTimeMs": 13.95
+    },
+    {
+      "timestamp": "2026-07-09T15:58:44.653Z",
+      "route": "/emblem.jpg",
+      "status": 304,
+      "responseTimeMs": 4.71
+    },
+    {
+      "timestamp": "2026-07-09T15:58:44.656Z",
+      "route": "/js/app.js",
+      "status": 200,
+      "responseTimeMs": 6.54
+    },
+    {
+      "timestamp": "2026-07-09T15:58:45.789Z",
+      "route": "/api/matches",
+      "status": 304,
+      "responseTimeMs": 5.63
+    },
+    {
+      "timestamp": "2026-07-09T15:58:45.793Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 2.25
+    },
+    {
+      "timestamp": "2026-07-09T15:58:45.811Z",
+      "route": "/background.jpg",
+      "status": 304,
+      "responseTimeMs": 2.01
+    },
+    {
+      "timestamp": "2026-07-09T15:59:05.498Z",
+      "route": "/api/matches",
+      "status": 304,
+      "responseTimeMs": 0.97
+    },
+    {
+      "timestamp": "2026-07-09T15:59:05.499Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.5
+    }
+  ]
+}
