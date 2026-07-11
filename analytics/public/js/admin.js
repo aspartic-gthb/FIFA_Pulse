@@ -125,6 +125,9 @@ function renderStats(s) {
   setTile('requestCount', Number(s.requestCount).toLocaleString(), s.requestCount !== lastStats.requestCount);
   setTile('uptime', fmtUptime(s.uptimeSeconds), false);
   setTile('lastUpdated', fmtRelative(s.lastUpdated, s.totalVotes), s.lastUpdated !== lastStats.lastUpdated);
+  
+  renderActivityFeed(s.votesLog || []);
+
   lastStats = s;
   loadedOnce = true;
 }
@@ -149,6 +152,10 @@ function renderMetrics(m) {
 
   setTile('avgResponseTimeMs', `${m.avgResponseTimeMs}ms`, m.avgResponseTimeMs !== lastMetrics.avgResponseTimeMs);
   updateFill('avgResponseTimeMs', Math.min(100, Math.round((m.avgResponseTimeMs / 400) * 100)));
+
+  renderLatencyHistory(m.latencyHistory || []);
+  renderRouteDistribution(m.routeBreakdown || []);
+  renderErrorConsole(m.recentErrors || []);
 
   lastMetrics = m;
 }
@@ -315,6 +322,40 @@ function renderChart(results) {
   }
 }
 
+function renderActivityFeed(votes) {
+  const feed = document.getElementById('activity-feed');
+  if (!feed) return;
+
+  if (!votes || votes.length === 0) {
+    feed.innerHTML = `<div class="text-outline text-body-sm text-center py-12">Waiting for new predictions...</div>`;
+    return;
+  }
+
+  // Reverse so the newest votes appear first
+  const reversedVotes = [...votes].reverse();
+
+  feed.innerHTML = reversedVotes
+    .map((vote) => {
+      const time = new Date(vote.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const flagUrl = getFlagUrl(vote.votedTeam);
+      
+      return `
+      <div class="flex items-center justify-between p-3 bg-surface border border-outline-variant rounded-lg">
+        <div class="flex items-center gap-3">
+          <img class="w-6 h-4 object-cover rounded border border-gray-200" src="${flagUrl}" alt="${esc(vote.votedTeam)}" />
+          <div class="flex flex-col">
+            <span class="text-body-sm font-bold text-on-surface">
+              Predicted <span class="text-primary font-extrabold">${esc(vote.votedTeam)}</span> to beat ${esc(vote.opponent)}
+            </span>
+            <span class="text-[10px] text-outline uppercase font-bold text-xs">${esc(vote.stage)} fixture</span>
+          </div>
+        </div>
+        <span class="text-[11px] font-mono text-outline">${time}</span>
+      </div>`;
+    })
+    .join('');
+}
+
 function flashEl(el) {
   el.classList.add('text-secondary');
   setTimeout(() => {
@@ -403,14 +444,94 @@ async function loadFixtures() {
   }
 }
 
-function initThroughputSim() {
-  const bars = document.querySelectorAll('main section div.bg-primary.transition-all, main section div.bg-secondary.transition-all');
-  setInterval(() => {
-    bars.forEach(bar => {
-      const randomHeight = Math.floor(Math.random() * 60) + 30;
-      bar.style.height = `${randomHeight}%`;
-    });
-  }, 3000);
+function renderLatencyHistory(history) {
+  const container = document.getElementById('latency-bars');
+  if (!container) return;
+  const bars = container.children;
+  if (!bars || bars.length !== 12) return;
+
+  // Pad history with 0s if we have less than 12 points
+  const padded = [...Array(12 - history.length).fill(0), ...history];
+  
+  // Find maximum latency in the history to scale heights proportionally
+  const max = Math.max(...padded, 100);
+
+  padded.forEach((ms, idx) => {
+    const bar = bars[idx];
+    if (!bar) return;
+
+    if (ms === 0) {
+      bar.style.height = '10%';
+      bar.title = 'No request';
+      bar.className = 'bg-primary w-full transition-all duration-300 opacity-20';
+      return;
+    }
+
+    const heightPct = Math.min(100, Math.max(10, Math.round((ms / max) * 100)));
+    bar.style.height = `${heightPct}%`;
+    bar.title = `${ms}ms`;
+
+    if (ms >= 150) {
+      bar.className = 'bg-secondary w-full transition-all duration-300';
+    } else {
+      bar.className = 'bg-primary w-full transition-all duration-300';
+    }
+  });
+}
+
+function renderRouteDistribution(breakdown) {
+  const container = document.getElementById('route-distribution');
+  if (!container) return;
+
+  if (!breakdown || breakdown.length === 0) {
+    container.innerHTML = `<div class="text-outline text-center py-12">Waiting for traffic data...</div>`;
+    return;
+  }
+
+  container.innerHTML = breakdown
+    .map((item) => {
+      let badgeColor = 'bg-gray-100 text-gray-700';
+      if (item.route.startsWith('/api/vote')) badgeColor = 'bg-amber-100 text-amber-800';
+      else if (item.route.startsWith('/api/stats')) badgeColor = 'bg-emerald-100 text-emerald-800';
+      else if (item.route.startsWith('/api/')) badgeColor = 'bg-blue-100 text-blue-800';
+
+      return `
+      <div class="flex flex-col gap-1.5">
+        <div class="flex justify-between items-center text-xs">
+          <span class="font-mono font-bold ${badgeColor} px-2 py-0.5 rounded text-[10px]">${esc(item.route)}</span>
+          <span class="text-outline font-bold text-[11px]">${item.count} reqs (${item.percentage}%)</span>
+        </div>
+        <div class="w-full bg-surface-container-high h-[6px] overflow-hidden rounded-sm">
+          <div class="bg-primary h-full transition-all duration-500" style="width: ${item.percentage}%"></div>
+        </div>
+      </div>`;
+    })
+    .join('');
+}
+
+function renderErrorConsole(errors) {
+  const consoleEl = document.getElementById('error-console');
+  if (!consoleEl) return;
+
+  if (!errors || errors.length === 0) {
+    consoleEl.innerHTML = `<div class="text-emerald-500/60 text-center py-12 font-sans">[ SYSTEM STATUS: SECURE — NO ERRORS DETECTED ]</div>`;
+    return;
+  }
+
+  consoleEl.innerHTML = errors
+    .map((err) => {
+      const time = new Date(err.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const statusBadge = `<span class="bg-red-500/20 text-red-400 border border-red-500/30 px-1.5 py-0.5 rounded font-bold mr-2">${err.status}</span>`;
+      return `
+      <div class="flex items-center justify-between py-1.5 border-b border-emerald-500/10 last:border-0 hover:bg-white/5 px-2 rounded transition-colors">
+        <div>
+          ${statusBadge}
+          <span class="text-emerald-300 font-bold font-mono">${esc(err.route)}</span>
+        </div>
+        <span class="text-emerald-500/70 font-mono text-[10px]">${time}</span>
+      </div>`;
+    })
+    .join('');
 }
 
 async function init() {
@@ -424,7 +545,6 @@ async function init() {
   fetchMetrics();
   fetchResults();
   startStream();
-  initThroughputSim();
 
   metricsInterval = setInterval(fetchMetrics, 5000);
   resultsInterval = setInterval(fetchResults, 5000);

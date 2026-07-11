@@ -285,56 +285,105 @@
         </div>
       </section>
 
-      <!-- Votes by Fixture panel -->
-      <section class="bg-surface-container-lowest blue-border p-6 md:p-10 w-full flex flex-col professional-shadow mb-12">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-2 border-b border-outline-variant pb-4">
-          <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">Votes by Fixture</h3>
-          <div class="flex gap-6 text-label-md font-bold uppercase text-outline">
-            <div class="flex items-center gap-2">
-              <span class="w-3.5 h-3.5 bg-primary rounded-sm"></span>
-              <span>Left Side</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-3.5 h-3.5 bg-secondary rounded-sm"></span>
-              <span>Right Side</span>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-12">
+        <!-- Votes by Fixture panel -->
+        <section class="lg:col-span-2 bg-surface-container-lowest blue-border p-6 md:p-10 flex flex-col professional-shadow">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-2 border-b border-outline-variant pb-4">
+            <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">Votes by Fixture</h3>
+            <div class="flex gap-6 text-label-md font-bold uppercase text-outline">
+              <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 bg-primary rounded-sm"></span>
+                <span>Left Side</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 bg-secondary rounded-sm"></span>
+                <span>Right Side</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div id="chart" class="flex flex-col gap-6" aria-live="polite">
-          <!-- head-to-head rows injected by analytics.js -->
-        </div>
-      </section>
+          <div id="chart" class="flex flex-col gap-6" aria-live="polite">
+            <!-- head-to-head rows injected by analytics.js -->
+          </div>
+        </section>
 
-      <!-- Data Visualization Canvas (Simulated Live Throughput) -->
+        <!-- Live Activity Feed panel -->
+        <section class="bg-surface-container-lowest blue-border p-6 md:p-10 flex flex-col justify-between professional-shadow">
+          <div class="w-full">
+            <div class="flex justify-between items-center mb-6 border-b border-outline-variant pb-4">
+              <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">Live Activity Feed</h3>
+              <span class="flex h-2.5 w-2.5 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+            </div>
+            <div id="activity-feed" class="flex flex-col gap-3 overflow-y-auto max-h-[300px]" aria-live="polite">
+              <div class="text-outline text-body-sm text-center py-12">Waiting for new predictions...</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Data Visualization Canvas (Live System Latency History) -->
       <section class="bg-surface-container-lowest blue-border p-10 w-full h-[400px] flex flex-col professional-shadow">
         <div class="flex justify-between items-center mb-8 border-b border-outline-variant pb-4">
-          <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">Institutional Throughput</h3>
+          <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">Live Request Latency History</h3>
           <div class="flex gap-8">
             <div class="flex items-center gap-2">
               <span class="w-4 h-4 bg-primary"></span>
-              <span class="font-label-lg text-label-lg uppercase text-outline font-bold">Current</span>
+              <span class="font-label-lg text-label-lg uppercase text-outline font-bold">Healthy (&lt; 150ms)</span>
             </div>
             <div class="flex items-center gap-2">
               <span class="w-4 h-4 bg-secondary"></span>
-              <span class="font-label-lg text-label-lg uppercase text-outline font-bold">Benchmark</span>
+              <span class="font-label-lg text-label-lg uppercase text-outline font-bold">High Latency (&gt;= 150ms)</span>
             </div>
           </div>
         </div>
-        <div class="flex-grow flex items-end gap-3 px-2 pb-2">
-          <div class="bg-primary w-full h-[40%] transition-all duration-300"></div>
-          <div class="bg-primary w-full h-[65%] transition-all duration-300"></div>
-          <div class="bg-primary w-full h-[45%] transition-all duration-300"></div>
-          <div class="bg-secondary w-full h-[85%] transition-all duration-300"></div>
-          <div class="bg-primary w-full h-[70%] transition-all duration-300"></div>
-          <div class="bg-primary w-full h-[95%] transition-all duration-300"></div>
-          <div class="bg-primary w-full h-[60%] transition-all duration-300"></div>
-          <div class="bg-secondary w-full h-[80%] transition-all duration-300"></div>
-          <div class="bg-primary w-full h-[75%] transition-all duration-300"></div>
-          <div class="bg-primary w-full h-[90%] transition-all duration-300"></div>
-          <div class="bg-primary w-full h-[55%] transition-all duration-300"></div>
-          <div class="bg-primary w-full h-[45%] transition-all duration-300"></div>
+        <div id="latency-bars" class="flex-grow flex items-end gap-3 px-2 pb-2">
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
+          <div class="bg-primary w-full h-[10%] transition-all duration-300" title="No data"></div>
         </div>
       </section>
+
+      <!-- Advanced Telemetry Panel (Traffic Breakdown & Error Console) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter mt-12 mb-12">
+        <!-- API Route Traffic Distribution -->
+        <section class="bg-surface-container-lowest blue-border p-6 md:p-10 flex flex-col justify-between professional-shadow">
+          <div class="w-full">
+            <div class="flex justify-between items-center mb-6 border-b border-outline-variant pb-4">
+              <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">API Route Load Distribution</h3>
+            </div>
+            <div id="route-distribution" class="flex flex-col gap-4 text-body-sm" aria-live="polite">
+              <div class="text-outline text-center py-12">Waiting for traffic data...</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Live System Error Console -->
+        <section class="bg-surface-container-lowest blue-border p-6 md:p-10 flex flex-col justify-between professional-shadow">
+          <div class="w-full">
+            <div class="flex justify-between items-center mb-6 border-b border-outline-variant pb-4">
+              <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">Recent System Failures</h3>
+              <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+              </span>
+            </div>
+            <div id="error-console" class="flex flex-col gap-2 font-mono text-[11px] bg-gray-950 text-emerald-400 p-4 rounded-lg min-h-[160px] overflow-y-auto max-h-[220px]" aria-live="polite">
+              <div class="text-emerald-500/60 text-center py-12 font-sans">[ SYSTEM STATUS: SECURE — NO ERRORS DETECTED ]</div>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <!-- Back Link Navigation -->
       <div class="mt-12 flex justify-center">

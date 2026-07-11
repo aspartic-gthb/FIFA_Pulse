@@ -165,8 +165,8 @@
     <!-- Error/Stale banner -->
     <div id="banner" class="mb-6 p-4 border border-red-200 bg-red-50 text-red-700 rounded-lg hidden font-bold text-center"></div>
 
-    <!-- Engagement Stats Grid (4 items) -->
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-12">
+    <!-- Engagement Stats Grid (6 items) -->
+    <section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-gutter mb-12">
       <!-- Total Votes -->
       <div class="bg-surface-container-lowest blue-border p-6 flex flex-col justify-between min-h-[160px] professional-shadow" data-tile="totalVotes">
         <span class="material-symbols-outlined text-primary text-[24px]">how_to_vote</span>
@@ -191,6 +191,22 @@
           <div class="font-label-md text-label-md uppercase text-outline font-bold">Total Visitors</div>
         </div>
       </div>
+      <!-- Request Count -->
+      <div class="bg-surface-container-lowest blue-border p-6 flex flex-col justify-between min-h-[160px] professional-shadow" data-tile="requestCount">
+        <span class="material-symbols-outlined text-primary text-[24px]">database</span>
+        <div>
+          <div class="font-display-lg text-on-surface leading-none mb-1 font-bold tile-value skeleton">0</div>
+          <div class="font-label-md text-label-md uppercase text-outline font-bold">Request Count</div>
+        </div>
+      </div>
+      <!-- Uptime / Status -->
+      <div class="bg-surface-container-lowest blue-border p-6 flex flex-col justify-between min-h-[160px] professional-shadow" data-tile="uptime">
+        <span class="material-symbols-outlined text-primary text-[24px]">check_circle</span>
+        <div>
+          <div class="font-display-lg text-on-surface leading-none mb-1 font-bold tile-value skeleton">0s</div>
+          <div class="font-label-md text-label-md uppercase text-outline font-bold">System Status / Uptime</div>
+        </div>
+      </div>
       <!-- Last Updated -->
       <div class="bg-surface-container-lowest blue-border p-6 flex flex-col justify-between min-h-[160px] professional-shadow" data-tile="lastUpdated">
         <span class="material-symbols-outlined text-primary text-[24px]">update</span>
@@ -201,25 +217,43 @@
       </div>
     </section>
 
-    <!-- Votes by Fixture panel -->
-    <section class="bg-surface-container-lowest blue-border p-6 md:p-10 w-full flex flex-col professional-shadow mb-12">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-2 border-b border-outline-variant pb-4">
-        <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">Votes by Fixture</h3>
-        <div class="flex gap-6 text-label-md font-bold uppercase text-outline">
-          <div class="flex items-center gap-2">
-            <span class="w-3.5 h-3.5 bg-primary rounded-sm"></span>
-            <span>Left Side</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="w-3.5 h-3.5 bg-secondary rounded-sm"></span>
-            <span>Right Side</span>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-12">
+      <!-- Votes by Fixture panel -->
+      <section class="lg:col-span-2 bg-surface-container-lowest blue-border p-6 md:p-10 flex flex-col professional-shadow">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-2 border-b border-outline-variant pb-4">
+          <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">Votes by Fixture</h3>
+          <div class="flex gap-6 text-label-md font-bold uppercase text-outline">
+            <div class="flex items-center gap-2">
+              <span class="w-3.5 h-3.5 bg-primary rounded-sm"></span>
+              <span>Left Side</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-3.5 h-3.5 bg-secondary rounded-sm"></span>
+              <span>Right Side</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="chart" class="flex flex-col gap-6" aria-live="polite">
-        <!-- head-to-head rows injected by analytics.js -->
-      </div>
-    </section>
+        <div id="chart" class="flex flex-col gap-6" aria-live="polite">
+          <!-- head-to-head rows injected by analytics.js -->
+        </div>
+      </section>
+
+      <!-- Live Activity Feed panel -->
+      <section class="bg-surface-container-lowest blue-border p-6 md:p-10 flex flex-col justify-between professional-shadow">
+        <div class="w-full">
+          <div class="flex justify-between items-center mb-6 border-b border-outline-variant pb-4">
+            <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">Live Activity Feed</h3>
+            <span class="flex h-2.5 w-2.5 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+          </div>
+          <div id="activity-feed" class="flex flex-col gap-3 overflow-y-auto max-h-[300px]" aria-live="polite">
+            <div class="text-outline text-body-sm text-center py-12">Waiting for new predictions...</div>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <!-- Back Link Navigation -->
     <div class="mt-12 flex justify-center">

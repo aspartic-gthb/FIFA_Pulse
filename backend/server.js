@@ -48,6 +48,9 @@ function loadDb() {
   // Reset process-scoped fields so uptime/telemetry reflect *this* run.
   parsed.meta.startedAt = new Date(BOOT_TIME).toISOString();
   parsed.requestLog = [];
+  if (!parsed.votesLog) {
+    parsed.votesLog = [];
+  }
   return parsed;
 }
 
@@ -151,6 +154,7 @@ function buildStats() {
     requestCount: db.meta.requestCount,
     uptimeSeconds: Math.floor((Date.now() - BOOT_TIME) / 1000),
     lastUpdated: db.meta.lastUpdated,
+    votesLog: db.votesLog || [],
   };
 }
 
@@ -189,8 +193,44 @@ function buildMetrics() {
   const pad = (n) => String(n).padStart(2, '0');
   const peakTrafficWindow =
     peakHour === null ? null : `${pad(peakHour)}:00–${pad((peakHour + 1) % 24)}:00 UTC`;
+  const latencyHistory = log.slice(-12).map((item) => item.responseTimeMs);
 
-  return { avgRequestsPerMin, errorCount, peakTrafficWindow, avgResponseTimeMs };
+  // Route traffic breakdown (Top 5)
+  const routeCounts = {};
+  for (const e of log) {
+    routeCounts[e.route] = (routeCounts[e.route] || 0) + 1;
+  }
+  const routeBreakdown = log.length
+    ? Object.entries(routeCounts)
+        .map(([route, count]) => ({
+          route,
+          count,
+          percentage: Math.round((count / log.length) * 100),
+        }))
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 5)
+    : [];
+
+  // Recent errors (Last 5)
+  const recentErrors = log
+    .filter((e) => e.status >= 400)
+    .slice(-5)
+    .map((e) => ({
+      timestamp: e.timestamp,
+      route: e.route,
+      status: e.status,
+    }))
+    .reverse();
+
+  return {
+    avgRequestsPerMin,
+    errorCount,
+    peakTrafficWindow,
+    avgResponseTimeMs,
+    latencyHistory,
+    routeBreakdown,
+    recentErrors,
+  };
 }
 
 // Small wrapper so a thrown handler bumps errorCount and returns clean JSON
@@ -257,6 +297,21 @@ app.post('/api/vote', api(async (req, res) => {
 
   match.votes[team] += 1;
   db.meta.lastUpdated = new Date().toISOString();
+
+  // Log the vote with full team vs opponent context
+  const votedTeamName = team === 'teamA' ? match.teamA : match.teamB;
+  const opponentTeamName = team === 'teamA' ? match.teamB : match.teamA;
+  db.votesLog.push({
+    timestamp: new Date().toISOString(),
+    matchId: match.id,
+    stage: match.stage,
+    votedTeam: votedTeamName,
+    opponent: opponentTeamName,
+  });
+  if (db.votesLog.length > 15) {
+    db.votesLog.shift();
+  }
+
   await persist();
   broadcastStats();
 

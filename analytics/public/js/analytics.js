@@ -90,6 +90,9 @@ function renderStats(s) {
   setTile('requestCount', Number(s.requestCount).toLocaleString(), s.requestCount !== lastStats.requestCount);
   setTile('uptime', fmtUptime(s.uptimeSeconds), false);
   setTile('lastUpdated', fmtRelative(s.lastUpdated, s.totalVotes), s.lastUpdated !== lastStats.lastUpdated);
+  
+  renderActivityFeed(s.votesLog || []);
+
   lastStats = s;
   loadedOnce = true;
 }
@@ -278,6 +281,40 @@ function renderChart(results) {
     }
     lastResult[m.id] = { a, b };
   }
+}
+
+function renderActivityFeed(votes) {
+  const feed = document.getElementById('activity-feed');
+  if (!feed) return;
+
+  if (!votes || votes.length === 0) {
+    feed.innerHTML = `<div class="text-outline text-body-sm text-center py-12">Waiting for new predictions...</div>`;
+    return;
+  }
+
+  // Reverse so the newest votes appear first
+  const reversedVotes = [...votes].reverse();
+
+  feed.innerHTML = reversedVotes
+    .map((vote) => {
+      const time = new Date(vote.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const flagUrl = getFlagUrl(vote.votedTeam);
+      
+      return `
+      <div class="flex items-center justify-between p-3 bg-surface border border-outline-variant rounded-lg">
+        <div class="flex items-center gap-3">
+          <img class="w-6 h-4 object-cover rounded border border-gray-200" src="${flagUrl}" alt="${esc(vote.votedTeam)}" />
+          <div class="flex flex-col">
+            <span class="text-body-sm font-bold text-on-surface">
+              Predicted <span class="text-primary font-extrabold">${esc(vote.votedTeam)}</span> to beat ${esc(vote.opponent)}
+            </span>
+            <span class="text-[10px] text-outline uppercase font-bold text-xs">${esc(vote.stage)} fixture</span>
+          </div>
+        </div>
+        <span class="text-[11px] font-mono text-outline">${time}</span>
+      </div>`;
+    })
+    .join('');
 }
 
 function flashEl(el) {

@@ -8,8 +8,8 @@
       "date": "2026-07-09T20:00:00Z",
       "venue": "Foxborough (Gillette Stadium)",
       "votes": {
-        "teamA": 4,
-        "teamB": 2
+        "teamA": 8,
+        "teamB": 4
       }
     },
     {
@@ -20,8 +20,8 @@
       "date": "2026-07-10T19:00:00Z",
       "venue": "Inglewood (SoFi Stadium)",
       "votes": {
-        "teamA": 2,
-        "teamB": 1
+        "teamA": 6,
+        "teamB": 4
       }
     },
     {
@@ -32,8 +32,8 @@
       "date": "2026-07-11T21:00:00Z",
       "venue": "Miami Gardens (Hard Rock Stadium)",
       "votes": {
-        "teamA": 1,
-        "teamB": 2
+        "teamA": 6,
+        "teamB": 4
       }
     },
     {
@@ -62,60 +62,1121 @@
     }
   ],
   "meta": {
-    "totalVisitors": 1578,
-    "requestCount": 1888,
+    "totalVisitors": 1579,
+    "requestCount": 2798,
     "errorCount": 0,
-    "startedAt": "2026-07-09T15:57:50.854Z",
-    "lastUpdated": "2026-07-09T15:59:36.459Z"
+    "startedAt": "2026-07-11T16:34:35.746Z",
+    "lastUpdated": "2026-07-11T16:34:59.784Z"
   },
   "requestLog": [
     {
-      "timestamp": "2026-07-09T15:58:44.623Z",
+      "timestamp": "2026-07-11T16:34:46.585Z",
       "route": "/",
-      "status": 200,
-      "responseTimeMs": 13.95
-    },
-    {
-      "timestamp": "2026-07-09T15:58:44.653Z",
-      "route": "/emblem.jpg",
       "status": 304,
-      "responseTimeMs": 4.71
+      "responseTimeMs": 11.81
     },
     {
-      "timestamp": "2026-07-09T15:58:44.656Z",
-      "route": "/js/app.js",
+      "timestamp": "2026-07-11T16:34:46.608Z",
+      "route": "/api/metrics",
       "status": 200,
-      "responseTimeMs": 6.54
+      "responseTimeMs": 7.87
     },
     {
-      "timestamp": "2026-07-09T15:58:45.789Z",
-      "route": "/api/matches",
-      "status": 304,
-      "responseTimeMs": 5.63
-    },
-    {
-      "timestamp": "2026-07-09T15:58:45.793Z",
+      "timestamp": "2026-07-11T16:34:46.612Z",
       "route": "/api/results",
       "status": 304,
-      "responseTimeMs": 2.25
+      "responseTimeMs": 2.59
     },
     {
-      "timestamp": "2026-07-09T15:58:45.811Z",
-      "route": "/background.jpg",
+      "timestamp": "2026-07-11T16:34:46.649Z",
+      "route": "/emblem.jpg",
       "status": 304,
-      "responseTimeMs": 2.01
+      "responseTimeMs": 4.5
     },
     {
-      "timestamp": "2026-07-09T15:59:05.498Z",
+      "timestamp": "2026-07-11T16:34:46.650Z",
+      "route": "/js/app.js",
+      "status": 304,
+      "responseTimeMs": 4.05
+    },
+    {
+      "timestamp": "2026-07-11T16:34:46.989Z",
       "route": "/api/matches",
       "status": 304,
+      "responseTimeMs": 2.16
+    },
+    {
+      "timestamp": "2026-07-11T16:34:46.991Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.11
+    },
+    {
+      "timestamp": "2026-07-11T16:34:47.010Z",
+      "route": "/background.jpg",
+      "status": 304,
+      "responseTimeMs": 1.16
+    },
+    {
+      "timestamp": "2026-07-11T16:34:47.241Z",
+      "route": "/emblem.jpg",
+      "status": 304,
+      "responseTimeMs": 1.51
+    },
+    {
+      "timestamp": "2026-07-11T16:34:47.336Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 3.32
+    },
+    {
+      "timestamp": "2026-07-11T16:34:47.338Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.63
+    },
+    {
+      "timestamp": "2026-07-11T16:34:48.215Z",
+      "route": "/",
+      "status": 304,
+      "responseTimeMs": 2.39
+    },
+    {
+      "timestamp": "2026-07-11T16:34:48.294Z",
+      "route": "/emblem.jpg",
+      "status": 304,
+      "responseTimeMs": 1.76
+    },
+    {
+      "timestamp": "2026-07-11T16:34:48.295Z",
+      "route": "/js/analytics.js",
+      "status": 304,
+      "responseTimeMs": 1.81
+    },
+    {
+      "timestamp": "2026-07-11T16:34:48.607Z",
+      "route": "/api/stats",
+      "status": 200,
+      "responseTimeMs": 0.96
+    },
+    {
+      "timestamp": "2026-07-11T16:34:48.612Z",
+      "route": "/background.jpg",
+      "status": 304,
+      "responseTimeMs": 2.17
+    },
+    {
+      "timestamp": "2026-07-11T16:34:48.758Z",
+      "route": "/api/matches",
+      "status": 304,
+      "responseTimeMs": 0.88
+    },
+    {
+      "timestamp": "2026-07-11T16:34:48.772Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.24
+    },
+    {
+      "timestamp": "2026-07-11T16:34:48.774Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.83
+    },
+    {
+      "timestamp": "2026-07-11T16:34:48.811Z",
+      "route": "/emblem.jpg",
+      "status": 304,
+      "responseTimeMs": 1.8
+    },
+    {
+      "timestamp": "2026-07-11T16:34:51.170Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.08
+    },
+    {
+      "timestamp": "2026-07-11T16:34:51.171Z",
+      "route": "/api/matches",
+      "status": 304,
+      "responseTimeMs": 0.51
+    },
+    {
+      "timestamp": "2026-07-11T16:34:53.516Z",
+      "route": "/api/vote",
+      "status": 200,
+      "responseTimeMs": 9.03
+    },
+    {
+      "timestamp": "2026-07-11T16:34:53.529Z",
+      "route": "/api/results",
+      "status": 200,
+      "responseTimeMs": 1.6
+    },
+    {
+      "timestamp": "2026-07-11T16:34:53.533Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.08
+    },
+    {
+      "timestamp": "2026-07-11T16:34:53.783Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.62
+    },
+    {
+      "timestamp": "2026-07-11T16:34:53.784Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.75
+    },
+    {
+      "timestamp": "2026-07-11T16:34:56.471Z",
+      "route": "/api/vote",
+      "status": 200,
+      "responseTimeMs": 3.94
+    },
+    {
+      "timestamp": "2026-07-11T16:34:56.486Z",
+      "route": "/api/results",
+      "status": 200,
+      "responseTimeMs": 1.16
+    },
+    {
+      "timestamp": "2026-07-11T16:34:56.491Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.24
+    },
+    {
+      "timestamp": "2026-07-11T16:34:58.782Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.95
+    },
+    {
+      "timestamp": "2026-07-11T16:34:58.786Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.14
+    },
+    {
+      "timestamp": "2026-07-11T16:34:59.788Z",
+      "route": "/api/vote",
+      "status": 200,
+      "responseTimeMs": 4.08
+    },
+    {
+      "timestamp": "2026-07-11T16:34:59.804Z",
+      "route": "/api/results",
+      "status": 200,
+      "responseTimeMs": 1.24
+    },
+    {
+      "timestamp": "2026-07-11T16:34:59.808Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.96
+    },
+    {
+      "timestamp": "2026-07-11T16:35:02.077Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.67
+    },
+    {
+      "timestamp": "2026-07-11T16:35:02.079Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.67
+    },
+    {
+      "timestamp": "2026-07-11T16:35:03.781Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.16
+    },
+    {
+      "timestamp": "2026-07-11T16:35:03.783Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.58
+    },
+    {
+      "timestamp": "2026-07-11T16:35:08.780Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.6
+    },
+    {
+      "timestamp": "2026-07-11T16:35:08.783Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.25
+    },
+    {
+      "timestamp": "2026-07-11T16:35:14.064Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.86
+    },
+    {
+      "timestamp": "2026-07-11T16:35:14.065Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.33
+    },
+    {
+      "timestamp": "2026-07-11T16:35:19.066Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.09
+    },
+    {
+      "timestamp": "2026-07-11T16:35:19.067Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.49
+    },
+    {
+      "timestamp": "2026-07-11T16:35:24.065Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.66
+    },
+    {
+      "timestamp": "2026-07-11T16:35:24.066Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.35
+    },
+    {
+      "timestamp": "2026-07-11T16:35:29.078Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.12
+    },
+    {
+      "timestamp": "2026-07-11T16:35:29.080Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.82
+    },
+    {
+      "timestamp": "2026-07-11T16:35:34.067Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.84
+    },
+    {
+      "timestamp": "2026-07-11T16:35:34.068Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.46
+    },
+    {
+      "timestamp": "2026-07-11T16:35:39.079Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.1
+    },
+    {
+      "timestamp": "2026-07-11T16:35:39.080Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.54
+    },
+    {
+      "timestamp": "2026-07-11T16:35:44.070Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.96
+    },
+    {
+      "timestamp": "2026-07-11T16:35:44.071Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.47
+    },
+    {
+      "timestamp": "2026-07-11T16:35:49.076Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.2
+    },
+    {
+      "timestamp": "2026-07-11T16:35:49.077Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.4
+    },
+    {
+      "timestamp": "2026-07-11T16:35:54.085Z",
+      "route": "/api/metrics",
+      "status": 200,
       "responseTimeMs": 0.97
     },
     {
-      "timestamp": "2026-07-09T15:59:05.499Z",
+      "timestamp": "2026-07-11T16:35:54.086Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.36
+    },
+    {
+      "timestamp": "2026-07-11T16:35:59.064Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.89
+    },
+    {
+      "timestamp": "2026-07-11T16:35:59.065Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.44
+    },
+    {
+      "timestamp": "2026-07-11T16:36:02.105Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.9
+    },
+    {
+      "timestamp": "2026-07-11T16:36:02.106Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.42
+    },
+    {
+      "timestamp": "2026-07-11T16:36:04.087Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.3
+    },
+    {
+      "timestamp": "2026-07-11T16:36:04.089Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.71
+    },
+    {
+      "timestamp": "2026-07-11T16:36:09.087Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.88
+    },
+    {
+      "timestamp": "2026-07-11T16:36:09.088Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.52
+    },
+    {
+      "timestamp": "2026-07-11T16:36:13.781Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.43
+    },
+    {
+      "timestamp": "2026-07-11T16:36:13.782Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.61
+    },
+    {
+      "timestamp": "2026-07-11T16:36:18.781Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.99
+    },
+    {
+      "timestamp": "2026-07-11T16:36:18.788Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.12
+    },
+    {
+      "timestamp": "2026-07-11T16:36:23.780Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 2.01
+    },
+    {
+      "timestamp": "2026-07-11T16:36:23.787Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.78
+    },
+    {
+      "timestamp": "2026-07-11T16:36:28.785Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.91
+    },
+    {
+      "timestamp": "2026-07-11T16:36:28.787Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.37
+    },
+    {
+      "timestamp": "2026-07-11T16:36:34.063Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.68
+    },
+    {
+      "timestamp": "2026-07-11T16:36:34.064Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.23
+    },
+    {
+      "timestamp": "2026-07-11T16:36:39.078Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.08
+    },
+    {
+      "timestamp": "2026-07-11T16:36:39.079Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.61
+    },
+    {
+      "timestamp": "2026-07-11T16:36:44.063Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.99
+    },
+    {
+      "timestamp": "2026-07-11T16:36:44.064Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.27
+    },
+    {
+      "timestamp": "2026-07-11T16:36:49.075Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.59
+    },
+    {
+      "timestamp": "2026-07-11T16:36:49.076Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.25
+    },
+    {
+      "timestamp": "2026-07-11T16:36:54.077Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.9
+    },
+    {
+      "timestamp": "2026-07-11T16:36:54.078Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.49
+    },
+    {
+      "timestamp": "2026-07-11T16:36:59.064Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.91
+    },
+    {
+      "timestamp": "2026-07-11T16:36:59.065Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.31
+    },
+    {
+      "timestamp": "2026-07-11T16:37:02.089Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.9
+    },
+    {
+      "timestamp": "2026-07-11T16:37:02.090Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.39
+    },
+    {
+      "timestamp": "2026-07-11T16:37:04.072Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.84
+    },
+    {
+      "timestamp": "2026-07-11T16:37:04.073Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.42
+    },
+    {
+      "timestamp": "2026-07-11T16:37:09.063Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.64
+    },
+    {
+      "timestamp": "2026-07-11T16:37:09.063Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.36
+    },
+    {
+      "timestamp": "2026-07-11T16:37:14.062Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.88
+    },
+    {
+      "timestamp": "2026-07-11T16:37:14.063Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.4
+    },
+    {
+      "timestamp": "2026-07-11T16:37:19.069Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.19
+    },
+    {
+      "timestamp": "2026-07-11T16:37:19.070Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.48
+    },
+    {
+      "timestamp": "2026-07-11T16:37:24.072Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.29
+    },
+    {
+      "timestamp": "2026-07-11T16:37:24.073Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.56
+    },
+    {
+      "timestamp": "2026-07-11T16:37:29.069Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.31
+    },
+    {
+      "timestamp": "2026-07-11T16:37:29.071Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.72
+    },
+    {
+      "timestamp": "2026-07-11T16:38:02.071Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.98
+    },
+    {
+      "timestamp": "2026-07-11T16:38:02.073Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.53
+    },
+    {
+      "timestamp": "2026-07-11T16:38:02.077Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.89
+    },
+    {
+      "timestamp": "2026-07-11T16:38:02.080Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.72
+    },
+    {
+      "timestamp": "2026-07-11T16:39:02.111Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.85
+    },
+    {
+      "timestamp": "2026-07-11T16:39:02.113Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.51
+    },
+    {
+      "timestamp": "2026-07-11T16:39:02.119Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.02
+    },
+    {
+      "timestamp": "2026-07-11T16:39:02.121Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.6
+    },
+    {
+      "timestamp": "2026-07-11T16:40:02.077Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.05
+    },
+    {
+      "timestamp": "2026-07-11T16:40:02.084Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.55
+    },
+    {
+      "timestamp": "2026-07-11T16:40:02.087Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.27
+    },
+    {
+      "timestamp": "2026-07-11T16:40:02.089Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.7
+    },
+    {
+      "timestamp": "2026-07-11T16:41:02.108Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.14
+    },
+    {
+      "timestamp": "2026-07-11T16:41:02.109Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.53
+    },
+    {
+      "timestamp": "2026-07-11T16:41:02.112Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.78
+    },
+    {
+      "timestamp": "2026-07-11T16:41:02.113Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.48
+    },
+    {
+      "timestamp": "2026-07-11T16:42:02.072Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.22
+    },
+    {
+      "timestamp": "2026-07-11T16:42:02.078Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.77
+    },
+    {
+      "timestamp": "2026-07-11T16:42:02.081Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.18
+    },
+    {
+      "timestamp": "2026-07-11T16:42:02.086Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.63
+    },
+    {
+      "timestamp": "2026-07-11T16:43:02.077Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.14
+    },
+    {
+      "timestamp": "2026-07-11T16:43:02.080Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.74
+    },
+    {
+      "timestamp": "2026-07-11T16:43:02.083Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.92
+    },
+    {
+      "timestamp": "2026-07-11T16:43:02.086Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.9
+    },
+    {
+      "timestamp": "2026-07-11T16:44:02.076Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.2
+    },
+    {
+      "timestamp": "2026-07-11T16:44:02.078Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.66
+    },
+    {
+      "timestamp": "2026-07-11T16:44:02.083Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.25
+    },
+    {
+      "timestamp": "2026-07-11T16:44:02.084Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.61
+    },
+    {
+      "timestamp": "2026-07-11T16:45:02.097Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 2.36
+    },
+    {
+      "timestamp": "2026-07-11T16:45:02.100Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.61
+    },
+    {
+      "timestamp": "2026-07-11T16:45:02.107Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.62
+    },
+    {
+      "timestamp": "2026-07-11T16:45:02.109Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.95
+    },
+    {
+      "timestamp": "2026-07-11T16:46:02.171Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.96
+    },
+    {
+      "timestamp": "2026-07-11T16:46:02.173Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.64
+    },
+    {
+      "timestamp": "2026-07-11T16:46:02.177Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.03
+    },
+    {
+      "timestamp": "2026-07-11T16:46:02.179Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.63
+    },
+    {
+      "timestamp": "2026-07-11T16:47:02.075Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.84
+    },
+    {
+      "timestamp": "2026-07-11T16:47:02.075Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.4
+    },
+    {
+      "timestamp": "2026-07-11T16:47:02.079Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.36
+    },
+    {
+      "timestamp": "2026-07-11T16:47:02.081Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.54
+    },
+    {
+      "timestamp": "2026-07-11T16:48:02.087Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.16
+    },
+    {
+      "timestamp": "2026-07-11T16:48:02.088Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.68
+    },
+    {
+      "timestamp": "2026-07-11T16:48:02.094Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.14
+    },
+    {
+      "timestamp": "2026-07-11T16:48:02.097Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.67
+    },
+    {
+      "timestamp": "2026-07-11T16:49:02.068Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.77
+    },
+    {
+      "timestamp": "2026-07-11T16:49:02.068Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.39
+    },
+    {
+      "timestamp": "2026-07-11T16:49:02.073Z",
       "route": "/api/results",
       "status": 304,
       "responseTimeMs": 0.5
+    },
+    {
+      "timestamp": "2026-07-11T16:49:02.074Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.83
+    },
+    {
+      "timestamp": "2026-07-11T16:50:02.073Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.15
+    },
+    {
+      "timestamp": "2026-07-11T16:50:02.076Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.58
+    },
+    {
+      "timestamp": "2026-07-11T16:50:02.080Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.11
+    },
+    {
+      "timestamp": "2026-07-11T16:50:02.083Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.64
+    },
+    {
+      "timestamp": "2026-07-11T16:51:02.069Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.21
+    },
+    {
+      "timestamp": "2026-07-11T16:51:02.070Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.72
+    },
+    {
+      "timestamp": "2026-07-11T16:51:02.074Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.83
+    },
+    {
+      "timestamp": "2026-07-11T16:51:02.079Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.72
+    },
+    {
+      "timestamp": "2026-07-11T16:52:02.096Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.19
+    },
+    {
+      "timestamp": "2026-07-11T16:52:02.097Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.6
+    },
+    {
+      "timestamp": "2026-07-11T16:52:02.101Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.04
+    },
+    {
+      "timestamp": "2026-07-11T16:52:02.104Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.35
+    },
+    {
+      "timestamp": "2026-07-11T16:53:02.248Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.97
+    },
+    {
+      "timestamp": "2026-07-11T16:53:02.248Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.46
+    },
+    {
+      "timestamp": "2026-07-11T16:53:02.254Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.54
+    },
+    {
+      "timestamp": "2026-07-11T16:53:02.256Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.96
+    },
+    {
+      "timestamp": "2026-07-11T16:54:02.073Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.72
+    },
+    {
+      "timestamp": "2026-07-11T16:54:02.075Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.61
+    },
+    {
+      "timestamp": "2026-07-11T16:54:02.078Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.06
+    },
+    {
+      "timestamp": "2026-07-11T16:54:02.080Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.75
+    },
+    {
+      "timestamp": "2026-07-11T16:55:02.163Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.96
+    },
+    {
+      "timestamp": "2026-07-11T16:55:02.171Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 0.94
+    },
+    {
+      "timestamp": "2026-07-11T16:55:02.172Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.57
+    },
+    {
+      "timestamp": "2026-07-11T16:55:02.175Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.55
+    },
+    {
+      "timestamp": "2026-07-11T16:56:02.083Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.62
+    },
+    {
+      "timestamp": "2026-07-11T16:56:02.084Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.93
+    },
+    {
+      "timestamp": "2026-07-11T16:56:02.087Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.46
+    },
+    {
+      "timestamp": "2026-07-11T16:56:02.089Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.78
+    },
+    {
+      "timestamp": "2026-07-11T16:56:36.297Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.52
+    },
+    {
+      "timestamp": "2026-07-11T16:56:36.299Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 1.03
+    },
+    {
+      "timestamp": "2026-07-11T16:56:38.778Z",
+      "route": "/api/metrics",
+      "status": 200,
+      "responseTimeMs": 1.31
+    },
+    {
+      "timestamp": "2026-07-11T16:56:38.779Z",
+      "route": "/api/results",
+      "status": 304,
+      "responseTimeMs": 0.67
+    }
+  ],
+  "votesLog": [
+    {
+      "timestamp": "2026-07-11T16:34:53.507Z",
+      "matchId": "m3",
+      "stage": "Quarterfinal",
+      "votedTeam": "Norway",
+      "opponent": "England"
+    },
+    {
+      "timestamp": "2026-07-11T16:34:56.468Z",
+      "matchId": "m2",
+      "stage": "Quarterfinal",
+      "votedTeam": "Belgium",
+      "opponent": "Spain"
+    },
+    {
+      "timestamp": "2026-07-11T16:34:59.784Z",
+      "matchId": "m1",
+      "stage": "Quarterfinal",
+      "votedTeam": "France",
+      "opponent": "Morocco"
     }
   ]
 }
