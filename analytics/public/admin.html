@@ -307,16 +307,16 @@
         </section>
 
         <!-- Live Activity Feed panel -->
-        <section class="bg-surface-container-lowest blue-border p-6 md:p-10 flex flex-col justify-between professional-shadow">
-          <div class="w-full">
-            <div class="flex justify-between items-center mb-6 border-b border-outline-variant pb-4">
+        <section class="bg-surface-container-lowest blue-border p-6 md:p-10 flex flex-col professional-shadow">
+          <div class="w-full flex flex-col flex-grow">
+            <div class="flex justify-between items-center mb-6 border-b border-outline-variant pb-4 flex-shrink-0">
               <h3 class="font-headline-lg text-on-surface uppercase tracking-tight">Live Activity Feed</h3>
               <span class="flex h-2.5 w-2.5 relative">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
             </div>
-            <div id="activity-feed" class="flex flex-col gap-3 overflow-y-auto max-h-[300px]" aria-live="polite">
+            <div id="activity-feed" class="flex flex-col gap-3 overflow-y-auto flex-grow h-0" aria-live="polite">
               <div class="text-outline text-body-sm text-center py-12">Waiting for new predictions...</div>
             </div>
           </div>
