@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
 <head>
+  <script>
+    if (window.location.protocol !== 'file:') {
+      const base = document.createElement('base');
+      base.href = '/analytics/';
+      document.head.prepend(base);
+    }
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Secure operational analytics dashboard for the FIFA Pulse platform." />
   <title>FIFA Pulse — Operations Command Center</title>
-  <link rel="icon" type="image/jpeg" href="/emblem.jpg" />
+  <link rel="icon" type="image/jpeg" href="emblem.jpg" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
@@ -106,7 +113,7 @@
   </script>
   <style>
     body {
-      background-image: linear-gradient(rgba(249, 249, 249, 0.8), rgba(249, 249, 249, 0.8)), url('/background.jpg');
+      background-image: linear-gradient(rgba(249, 249, 249, 0.8), rgba(249, 249, 249, 0.8)), url('background.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -114,7 +121,7 @@
       -webkit-font-smoothing: antialiased;
     }
     #lock-screen {
-      background-image: linear-gradient(rgba(0, 23, 54, 0.75), rgba(0, 23, 54, 0.75)), url('/background.jpg');
+      background-image: linear-gradient(rgba(0, 23, 54, 0.75), rgba(0, 23, 54, 0.75)), url('background.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -148,7 +155,7 @@
   <div id="lock-screen" class="fixed inset-0 bg-[#001736] z-50 flex items-center justify-center p-4">
     <div class="bg-white/10 border border-white/20 p-8 rounded-2xl max-w-md w-full shadow-2xl backdrop-blur-md text-white flex flex-col items-center">
       <!-- Emblem logo -->
-      <img src="/emblem.jpg" alt="FIFA Pulse Emblem Logo" class="w-16 h-16 object-contain rounded mb-4" />
+      <img src="emblem.jpg" alt="FIFA Pulse Emblem Logo" class="w-16 h-16 object-contain rounded mb-4" />
       <h2 class="font-headline text-2xl uppercase font-bold tracking-tight mb-2">FIFA Pulse — Admin</h2>
       <p class="text-xs text-white/60 mb-6 text-center">Gated operations environment. Please provide the admin passcode to unlock operational telemetry.</p>
       
@@ -167,7 +174,7 @@
       <div class="bg-[#141414] py-3.5 px-margin-mobile md:px-margin-desktop flex justify-between items-center text-white h-16 border-b border-white/10 shadow-md">
         <div class="flex items-center gap-3">
           <!-- Emblem logo -->
-          <img src="/emblem.jpg" alt="FIFA Pulse Emblem" class="w-8 h-8 object-contain rounded" />
+          <img src="emblem.jpg" alt="FIFA Pulse Emblem" class="w-8 h-8 object-contain rounded" />
           <span class="font-headline text-lg uppercase font-bold tracking-tight text-white">FIFA Pulse — Admin</span>
         </div>
         <nav class="flex gap-6 items-center text-xs font-bold uppercase tracking-wider">

@@ -104,7 +104,47 @@ This guarantees FIFO (First-In-First-Out) execution ordering, ensuring data inte
 ---
 
 ## 5. Bonus Tasks Implemented
-
+ 
 * **[Optional] Real-Time Analytics**: Built and styled a live-ticking **Activity Feed** showing matching context (e.g., *Spain to beat Belgium*).
 * **[Optional] Monitoring & Logging**: Implemented a **Live Latency History Chart** feeding on actual response durations measured by `process.hrtime.bigint()`, dynamically highlights high latency requests (`>= 150ms`) in red.
 * **[Optional] Branded 404 Page**: Serving custom HTML files from `frontend/404.html` for unknown paths.
+ 
+---
+ 
+## 6. Live Deployment & Repository Links
+ 
+* **Source Code Repository**: [aspartic-gthb/FIFA_Pulse on GitHub](https://github.com/aspartic-gthb/FIFA_Pulse)
+* **Prediction Platform (Live)**: [https://fifa-pulse.onrender.com/](https://fifa-pulse.onrender.com/)
+* **Analytics Dashboard (Live)**: [https://fifa-pulse.onrender.com/analytics](https://fifa-pulse.onrender.com/analytics)
+* **Gated Command Center (Live)**: [https://fifa-pulse.onrender.com/analytics/admin](https://fifa-pulse.onrender.com/analytics/admin) (Passcode: `gdgc2026`)
+ 
+---
+ 
+## 7. Application Screenshots
+ 
+### Prediction Platform & Voting Functionality
+*Displays all 5 upcoming knockout fixtures, shows real-time percentage indicators of crowd predictions, and locks dynamically once a prediction is cast.*
+ 
+![Prediction Platform & Voting](screenshots/prediction_platform.png)
+ 
+---
+ 
+### Live Analytics Dashboard
+*Streams real-time global telemetry updates (total votes, visitors, requests) and displays a head-to-head vote ratios chart and a live-ticking activity feed.*
+ 
+![Live Analytics Dashboard](screenshots/analytics_dashboard.png)
+ 
+---
+ 
+### Gated Operations Command Center (Locked)
+*Displays a blurred passcode lock screen to prevent unauthorized operational access.*
+ 
+![Command Center Locked](screenshots/admin_command_center_locked.png)
+ 
+---
+ 
+### Gated Operations Command Center (Unlocked)
+*Provides deep infrastructure telemetry (requests/min, peak traffic hours, response times), route distributions, a live error log console, and a live request latency chart highlighting requests $\ge 150\text{ms}$ in red.*
+ 
+![Command Center Unlocked](screenshots/admin_command_center_unlocked.png)
+
