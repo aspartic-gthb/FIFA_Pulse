@@ -66,7 +66,7 @@ Render assigns a public HTTPS URL and redeploys on every push to `main`
 
 - **Data is ephemeral.** The JSON file lives on the free tier's ephemeral disk, so
   vote counts reset on redeploy/restart. Production would move to Postgres/Supabase —
-  the schema mapping is in `Backend-Schema.md §5`.
+  the architecture guidelines and database design are in [SUBMISSION_REPORT.md](SUBMISSION_REPORT.md).
 - **Cold starts.** The free service spins down when idle; the first request after
   idle can take ~30–50s.
 - **Votes aren't fraud-proof.** "One vote per match" is a client-side `localStorage`
@@ -81,14 +81,24 @@ Render assigns a public HTTPS URL and redeploys on every push to `main`
 backend/
   server.js            Express app: API, middleware, SSE, static, 404
   data/db.json         datastore (matches, meta counters, request ring-buffer)
-  public/
-    index.html         predictions / voting
-    analytics.html     live dashboard
-    404.html           branded not-found
-    css/styles.css
-    js/app.js          voting logic + live counts
-    js/analytics.js    SSE + polling fallback + flash-on-change
   test/smoke.test.js   API contract + data-integrity tests
+frontend/
+  index.html           predictions / voting
+  404.html             branded predictions 404 page
+  css/                 stylesheets
+  js/
+    app.js             voting client logic + match rendering
+analytics/
+  public/
+    index.html         live public analytics dashboard
+    admin.html         locked operations command center
+    404.html           branded analytics 404 page
+    js/
+      analytics.js     SSE telemetry receiver + live feed logic
+      admin.js         passcode gating + ops metrics logic
+assets/                styling images & media assets
+screenshots/           visual application screenshots
 .github/workflows/ci.yml
 render.yaml
 ```
+
